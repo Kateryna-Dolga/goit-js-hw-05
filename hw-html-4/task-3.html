@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>JS-GO-IT-HW-1</title>
+</head>
+<body>
+
+    <!------------------------logo----------------------------------------------------------------->
+    <div class="logo">
+            <h1> <a href="../index.html" class="logo-a">GOIT JavaScript - 107 </a></h1>
+    </div><!------------------------/logo----------------------------------------------------------------->
+
+<!------------------------main-content----------------------------------------------------------------->
+<div class="main-content">
+
+<!------------------------menu---------------------------------------------------------------->
+<div class="menu">
+
+<nav class="menu">
+    <ul class="menu-ul">
+        <li class="menu-li"><a href="" class="menu-a">Homework-1</a>
+        <ul class="small-menu-ul">
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-1</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-2</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-3</a></li>
+        </ul>
+        </li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-2</a>
+        <ul class="small-menu-ul">
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-1</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-2</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-3</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-4</a></li>
+        </ul>
+        </li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-3</a>
+        <ul class="small-menu-ul">
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-1</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-2</a></li>
+            <li class="small-menu-li"><a href="" class="small-menu-a">task-3</a></li>
+        </ul>
+        </li>
+        <li class="menu-li"><a href="" class="menu-a orange">Homework-4</a>
+            <ul class="small-menu-ul">
+                <li class="small-menu-li"><a href="task-1.html" class="small-menu-a">task-1</a></li>
+                <li class="small-menu-li"><a href="task-2.html" class="small-menu-a">task-2</a></li>
+                <li class="small-menu-li"><a href="task-3.html" class="small-menu-a">task-3</a></li>
+            </ul>
+        </li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-5</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-6</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-7</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-8</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-9</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-10</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-11</a></li>
+        <li class="menu-li"><a href="" class="menu-a">Homework-12</a></li>
+    </ul>
+</nav>
+</div><!------------------------/menu---------------------------------------------------------------->
+<!------------------------foto-content--------------------------------------------------------------->
+<div class="foto-content">
+<!------------------------foto------------------------------------------------------------------->
+<div class="foto">
+<img class="cat-it" width="260" src="../img/js.jpg" alt="it-cat">
+</div><!------------------------foto----------------------------------------------------------------->
+<!------------------------content----------------------------------------------------------------->
+<div class="content">
+<!------------------------exersice----------------------------------------------------------------->
+<div class="exersice">
+<h2>Задача 3. Профіль гравця</h2>
+<p><pre>ВИКОНУЙ ЦЕ ЗАВДАННЯ У ФАЙЛІ task-3.js
+Об’єкт profile описує профіль користувача на ігровій платформі. У його властивостях зберігається 
+ім’я профілю username та кількість активних годин playTime, проведених у грі.
+
+const profile = {
+username: "Jacob",
+playTime: 300,
+};
+
+Доповни об’єкт profile методами для роботи з його властивостями.
+
+Метод changeUsername(newName) повинен приймати рядок (нове ім’я) в параметр newName 
+та змінювати значення властивості username на нове. Нічого не повертає.
+
+Метод updatePlayTime(hours) повинен приймати число (кількість годин) у параметр hours 
+та збільшити на нього значення властивості playTime. Нічого не повертає.
+
+Метод getInfo() має повертати рядок формату <Username> has <amount> active hours!, де <Username> 
+    — це ім’я профілю, а<amount> — кількість ігрових годин.
+
+Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. 
+У консоль будуть виведені результати її роботи.
+
+
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
+
+Залиш цей код для перевірки ментором.
+
+                
+На що буде звертати увагу ментор при перевірці:
+                
+Оголошена змінна profile           
+Значення змінної profile — це об’єкт з властивостями username, playTime, getInfo, 
+changeUsername і updatePlayTime
+Значення властивості getInfo — це функція
+Значення властивості changeUsername — це функція
+Значення властивості updatePlayTime — це функція
+Для звернення до властивостей об’єкта в його методах використовується this</pre></p>
+</div><!------------------------/exersice----------------------------------------------------------------->
+<!------------------------Solution----------------------------------------------------------------->
+<div class="solution">
+    <h2>Рішення:</h2>
+<p><pre>const profile = {
+username: "Jacob",
+playTime: 300,
+getInfo() {
+return `${this.username} has ${this.playTime} active hours!`;
+},
+changeUsername(newName) {
+this.username = newName;
+},
+updatePlayTime(hours) {
+this.playTime += hours;
+}
+};
+
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
+</pre>
+</p>
+</div><!------------------------/solution----------------------------------------------------------------->
+<!------------------------result----------------------------------------------------------------->
+<div class="result">
+    <h2>Результат:</h2>
+    <p>
+    
+<pre>
+    Jacob has 300 active hours!
+    Marco has 300 active hours!
+    Marco has 320 active hours!
+</pre>
+</p>
+</div><!------------------------/result----------------------------------------------------------------->
+
+</div><!------------------------/content----------------------------------------------------------------->
+</div><!------------------------/foto-content---------------------------------------------------------------->
+</div><!------------------------/main-content----------------------------------------------------------------->
+<!------------------------footer----------------------------------------------------------------->
+<div class="footer">
+<ul class="footer-menu-ul">
+    <li class="footer-menu-li">
+        <a class="footer-menu-a footer-line">
+            Homework-1
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-2
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-3
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a orange-footer">
+            Homework-4
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-5
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-6
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-7
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-8
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-9
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-10
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-11
+        </a>
+    </li>
+    <li class="footer-menu-li">
+        <a class="footer-menu-a">
+            Homework-12
+        </a>
+    </li>
+</ul>
+<!------------------------footer-info----------------------------------------------------------------->
+<div class="footer-info">
+    <p>Kateryna Dolga</p>
+    <p>GOIT JavaScript - 107</p>
+    <p>email: july_info@ukr.net</p>
+    <p>tel: 067-176-1313</p>
+    <div><!------------------------/footer-info----------------------------------------------------------------->
+</div><!------------------------/footer----------------------------------------------------------------->
+
+
+
+<script src="../js/task-1.js"></script>
+<script src="../js/task-2.js"></script>
+<script src="../js/task-3.js"></script>
+</body>
+</html>
