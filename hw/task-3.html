@@ -10,7 +10,7 @@
 
 <body>
 
-    <!------------------------logo----------------------------------------------------------------->
+    <!------------------------logo------------------------------------------------------------------>
     <div class="logo">
         <h1> <a href="../index.html" class="logo-a">GOIT JavaScript - 107 </a></h1>
     </div><!------------------------/logo----------------------------------------------------------------->
@@ -80,19 +80,21 @@
             <div class="content">
                 <!------------------------exersice----------------------------------------------------------------->
                 <div class="exersice block">
-                    <h2>Задача 1. Імена користувачів</h2>
+                    <h2>Задача 3. Сортування за кількістю друзів</h2>
                     <p>
                     <pre>
-Виконуй це завдання у файлі task-1.js
+Виконуй це завдання у файлі task-3.js
 
 
-Напиши стрілочну функцію getUserNames(users), яка прийматиме один параметр 
-users — масив об’єктів користувачів. Функція має повертати масив імен 
-усіх користувачів (властивість name) із масиву users.
+Напиши стрілочну функцію sortByDescendingFriendCount(users) , 
+яка прийматиме один параметр users — масив об’єктів користувачів.
 
-Візьми код нижче і встав після оголошення своєї функції для 
-перевірки коректності її роботи. У консоль будуть виведені результати її викликів.
+Функція має повертати масив усіх користувачів, відсортованих за 
+спаданням кількостій їх друзів (властивість friends).
 
+Візьми код нижче і встав після оголошення своєї функції для перевірки 
+коректності її роботи. У консоль будуть виведені
+результати її роботи.
 </pre>
                     </p>
                 </div>
@@ -104,45 +106,44 @@ users — масив об’єктів користувачів. Функція 
                         <p>
                         <pre>
 console.log(
-getUserNames([
+sortByDescendingFriendCount([
 {
 name: "Moore Hensley",
-email: "moorehensley@indexia.com",
-balance: 2811
+friends: ["Sharron Pace"],
+gender: "male"
 },
 {
 name: "Sharlene Bush",
-email: "sharlenebush@tubesys.com",
-balance: 3821
+friends: ["Briana Decker", "Sharron Pace"],
+gender: "female"
 },
 {
 name: "Ross Vazquez",
-email: "rossvazquez@xinware.com",
-balance: 3793
+friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+gender: "male"
 },
 {
 name: "Elma Head",
-email: "elmahead@omatom.com",
-balance: 2278
+friends: ["Goldie Gentry", "Aisha Tran"],
+gender: "female"
 },
 {
 name: "Carey Barr",
-email: "careybarr@nurali.com",
-balance: 3951
+friends: ["Jordan Sampson", "Eddie Strong"],
+gender: "male"
 },
 {
 name: "Blackburn Dotson",
-email: "blackburndotson@furnigeer.com",
-balance: 1498
+friends: ["Jacklyn Lucas", "Linda Chapman"],
+gender: "male"
 },
 {
 name: "Sheree Anthony",
-email: "shereeanthony@kog.com",
-balance: 2764
-},
+friends: ["Goldie Gentry", "Briana Decker"],
+gender: "female"
+}
 ])
-); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", 
-"Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+);
 </pre>
                         </p>
                     </div>
@@ -156,7 +157,44 @@ balance: 2764
                     <h2>Залиш цей код для перевірки ментором:</h2>
                     <p>
                     <pre>
-
+// [
+// {
+// name: "Ross Vazquez",
+// friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+// gender: "male"
+// },
+// {
+// name: "Sharlene Bush",
+// friends: ["Briana Decker", "Sharron Pace"],
+// gender: "female"
+// },
+// {
+// name: "Elma Head",
+// friends: ["Goldie Gentry", "Aisha Tran"],
+// gender: "female"
+// },
+// {
+// name: "Carey Barr",
+// friends: ["Jordan Sampson", "Eddie Strong"],
+// gender: "male"
+// },
+// {
+// name: "Blackburn Dotson",
+// friends: ["Jacklyn Lucas", "Linda Chapman"],
+// gender: "male"
+// },
+// {
+// name: "Sheree Anthony",
+// friends: ["Goldie Gentry", "Briana Decker"],
+// gender: "female"
+// },
+// {
+// name: "Moore Hensley",
+// friends: ["Sharron Pace"],
+// gender: "male"
+// }
+// ]
+                </pre>
                     </p>
                 </div>
                 <!------------------------/putcode----------------------------------------------------------------->
@@ -165,24 +203,15 @@ balance: 2764
                     <h2>На що буде звертати увагу ментор при перевірці:</h2>
                     <p>
 
-
-                       <ul>
-                        <li>Оголошена змінна getUserNames</li>
-                                <li>Змінній getUserNames присвоєна стрілочна функція з параметром (users).</li>
-                                        <li>Для перебирання параметра users використовується метод map()</li>
-
-                                                <li>Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez",
-                                                "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]</li>
-                                                        <li>Виклик функції з випадковими, але валідними аргументами повертає правильне значення</li>
-                       </ul>
-                    
-
-
-
-
-
-
-
+                    <ul>
+                        <li>Оголошена змінна sortByDescendingFriendCount</li>
+                        <li>Змінній sortByDescendingFriendCount присвоєна стрілочна функція з параметром (users)</li>
+                        <li>Для перебирання параметра users використаний метод toSorted()</li>
+                        <li>Виклик функції із зазначеним масивом users повертає новий масив користувачів, відсортований за спаданням кількості їхніх
+                        друзів</li>
+                        <li>Виклик функції з випадковими, але валідними аргументами повертає правильне значення</li>
+              
+                    </ul>
 
 
 
@@ -201,50 +230,49 @@ balance: 2764
                     <h2>Рішення:</h2>
                     <p>
                     <pre>
-const getUserNames = (users) => {
-return users.map(user => user.name);
+const sortByDescendingFriendCount = (users) => {
+return users.sort((a, b) => b.friends.length - a.friends.length);
 };
 
 console.log(
-getUserNames([
+sortByDescendingFriendCount([
 {
 name: "Moore Hensley",
-email: "moorehensley@indexia.com",
-balance: 2811
+friends: ["Sharron Pace"],
+gender: "male"
 },
 {
 name: "Sharlene Bush",
-email: "sharlenebush@tubesys.com",
-balance: 3821
+friends: ["Briana Decker", "Sharron Pace"],
+gender: "female"
 },
 {
 name: "Ross Vazquez",
-email: "rossvazquez@xinware.com",
-balance: 3793
+friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+gender: "male"
 },
 {
 name: "Elma Head",
-email: "elmahead@omatom.com",
-balance: 2278
+friends: ["Goldie Gentry", "Aisha Tran"],
+gender: "female"
 },
 {
 name: "Carey Barr",
-email: "careybarr@nurali.com",
-balance: 3951
+friends: ["Jordan Sampson", "Eddie Strong"],
+gender: "male"
 },
 {
 name: "Blackburn Dotson",
-email: "blackburndotson@furnigeer.com",
-balance: 1498
+friends: ["Jacklyn Lucas", "Linda Chapman"],
+gender: "male"
 },
 {
 name: "Sheree Anthony",
-email: "shereeanthony@kog.com",
-balance: 2764
-},
+friends: ["Goldie Gentry", "Briana Decker"],
+gender: "female"
+}
 ])
-); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", 
-"Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+);
 
 </pre>
                     </p>
@@ -255,15 +283,14 @@ balance: 2764
                     <h2>Результат:</h2>
                     <p>
                     <pre>
-(7) ['Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 
-'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony']
-0:"Moore Hensley"
-1:"Sharlene Bush"
-2:"Ross Vazquez"
-3:"Elma Head"
-4:"Carey Barr"
-5:"Blackburn Dotson"
-6:"Sheree Anthony"
+Array(7)
+0:{name: 'Ross Vazquez', friends: Array(3), gender: 'male'}
+1:{name: 'Sharlene Bush', friends: Array(2), gender: 'female'}
+2:{name: 'Elma Head', friends: Array(2), gender: 'female'}
+3:{name: 'Carey Barr', friends: Array(2), gender: 'male'}
+4:{name: 'Blackburn Dotson', friends: Array(2), gender: 'male'}
+5:{name: 'Sheree Anthony', friends: Array(2), gender: 'female'}
+6:{name: 'Moore Hensley', friends: Array(1), gender: 'male'}
 length:7
 [[Prototype]]:Array(0)
 </pre>
@@ -350,9 +377,9 @@ length:7
 
 
 
-
-            <script src="../js-hw-5/task-1.js"></script>
-
+         
+            <script src="../js-hw-5/task-3.js"></script>
+           
 </body>
 
 </html>
